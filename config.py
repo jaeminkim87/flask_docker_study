@@ -2,8 +2,8 @@ import json
 
 db = {
     "user": "root",
-    "password": "Qh132042!",
-    "host": "localhost",
+    "password": "rlawoals2!",
+    "host": "127.0.0.1",
     "port": 3306,
     "database": "fmms"
 }

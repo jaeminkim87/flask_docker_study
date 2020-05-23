@@ -1,0 +1,21 @@
+version : '3'
+
+services:
+  mysql:
+    image: mysql:5.7
+    command: --explicit_defaults_for_timestamp
+    volumes:
+      - ./data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=rlawoals2!
+      - MYSQL_DATABASE=fmms
+
+  flask:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:5000"
+    environment:
+      - MYSQL_ROOT_PASSWORD=rlawoals2!
+      - MYSQL_DATABASE=fmms

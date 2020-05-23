@@ -7,7 +7,6 @@ from model.net import SenCNN
 from model.split import split_morphs
 from model.utils import Tokenizer, PadSequence
 
-
 app = Flask(__name__)
 app.config.from_pyfile("config.py")
 app.database = create_engine(app.config["DB_URL"], encoding="utf-8", max_overflow=0)
@@ -55,6 +54,5 @@ def inference():
     """), record)
     return jsonify(record), 200
 
-
 if __name__ == "__main__":
-    os.system("./run_app.sh")
+    app.run(host='0.0.0.0', port=5000, debug=True)
